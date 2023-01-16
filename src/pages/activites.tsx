@@ -1,23 +1,13 @@
 import type { NextPage } from "next";
-import { useBearStore } from "../store/bearstore";
+import Card from "../component/card";
+
 import { useActivites } from "./services/config";
 
 const Activities: NextPage = () => {
   const { status, data, error, isFetching } = useActivites();
-  const bears = useBearStore((state) => state.bears);
-  const increasePopulation = useBearStore((state) => state.increase);
 
   return (
-    <div>
-      <h1>{bears} around here ...</h1>
-      <button
-        onClick={() => {
-          increasePopulation(1);
-        }}
-      >
-        one up
-      </button>
-
+    <div className="mx-auto my-0 w-full max-w-5xl px-1 py-0 ">
       <div>
         {status === "loading" ? (
           "Loading..."
@@ -25,11 +15,9 @@ const Activities: NextPage = () => {
           <span>Error: {error.message}</span>
         ) : (
           <>
-            <div className="grid grid-cols-4 gap-4 ">
+            <div className="grid grid-cols-2 gap-4 ">
               {data.records.map(({ record: { fields } }) => (
-                <p className="bg-red-600" key={fields.id}>
-                  <a>{fields.title}</a>
-                </p>
+                <Card key={fields.id} {...fields} />
               ))}
             </div>
 

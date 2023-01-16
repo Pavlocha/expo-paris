@@ -1,0 +1,18 @@
+yarn run v1.22.19
+$ next build
+info  - Loaded env from /Users/mhimmid/getmeout/.env
+info  - Linting and checking validity of types...
+Failed to compile.
+
+./src/pages/activites.tsx:25:25
+Type error: 'error' is of type 'unknown'.
+
+[0m [90m 23 | [39m          [32m"Loading..."[39m[0m
+[0m [90m 24 | [39m        ) [33m:[39m status [33m===[39m [32m"error"[39m [33m?[39m ([0m
+[0m[31m[1m>[22m[39m[90m 25 | [39m          [33m<[39m[33mspan[39m[33m>[39m[33mError[39m[33m:[39m {error[33m.[39mmessage}[33m<[39m[33m/[39m[33mspan[39m[33m>[39m[0m
+[0m [90m    | [39m                        [31m[1m^[22m[39m[0m
+[0m [90m 26 | [39m        ) [33m:[39m ([0m
+[0m [90m 27 | [39m          [33m<[39m[33m>[39m[0m
+[0m [90m 28 | [39m            [33m<[39m[33mdiv[39m className[33m=[39m[32m"grid grid-cols-4 gap-4 "[39m[33m>[39m[0m
+info Visit https://yarnpkg.com/en/docs/cli/run for documentation about this command.
+error Command failed with exit code 1.
